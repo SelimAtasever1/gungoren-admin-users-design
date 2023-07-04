@@ -1,3 +1,6 @@
+import { NgDompurifySanitizer } from "@tinkoff/ng-dompurify";
+import { TuiRootModule, TuiDialogModule, TuiAlertModule, TUI_SANITIZER } from "@taiga-ui/core";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { LocationStrategy, PathLocationStrategy, registerLocaleData } from '@angular/common';
 import locale from '@angular/common/locales/tr';
 import { NgModule, LOCALE_ID } from '@angular/core';
@@ -20,12 +23,17 @@ registerLocaleData(locale);
 		HttpClientModule,
 		BrowserModule.withServerTransition({ appId: 'serverApp' }),
 		AppRoutingModule,
-	],
+        BrowserAnimationsModule,
+        TuiRootModule,
+        TuiDialogModule,
+        TuiAlertModule
+    ],
 	providers: [
 		{ provide: LocationStrategy, useClass: PathLocationStrategy },
 		{ provide: LOCALE_ID, useValue: 'tr' },
 		{ provide: API_URL, useValue: environment.apiUrl },
-	],
+        {provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}
+    ],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

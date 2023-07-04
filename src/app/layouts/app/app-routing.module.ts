@@ -9,8 +9,8 @@ const routes: Routes = [
 		path: '',
 		component: AppComponent,
 		children: [
-			{ path: '', pathMatch: 'full', redirectTo: 'user' }, 
-			{ path: 'users', loadChildren:() => import('@features/users/users.feature').then(f => f.UsersFeature) }]
+			{ path: 'staff', loadChildren:() => import('@features/users/users.feature').then(f => f.UsersFeature) }
+		],
 	},
 	{
 		path: '**',

@@ -1,5 +1,20 @@
 @import 'variables';
 
 :host {
-	display: flex;
+
+	.navigationTabs {
+		background-color: white;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;		
+	}
+
+	.content-section {
+		background-color: rgba(190, 151, 85, 0.59);
+		min-height: 100vh;
+		min-width: 24vh;
+		padding: 20px;
+	}
+	  
+	
 }

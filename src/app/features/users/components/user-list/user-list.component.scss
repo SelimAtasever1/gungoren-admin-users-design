@@ -1,20 +1,28 @@
 @import 'variables';
 
 :host {
+    .tab-section {
+        background-color: rgba(179, 117, 12, 0.244);
+        min-height: 100vh;
+        min-width: 25vh;
+        padding: 20px;
 
-	.navigationTabs {
-		background-color: white;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;		
-	}
+        h1, h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
 
-	.content-section {
-		background-color: rgba(190, 151, 85, 0.59);
-		min-height: 100vh;
-		min-width: 24vh;
-		padding: 20px;
-	}
-	  
-	
+        hr {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 20px 0;
+        }
+    }
+    
+    .content-section {
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }    
 }

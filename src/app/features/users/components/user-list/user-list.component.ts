@@ -8,11 +8,18 @@ import { UsersService } from '@shared/users/services/users/users.service';
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
-  private userService = new UsersService();
   users: UsersModel[];
 
+  constructor(private userService: UsersService) {}
+
   ngOnInit(): void {
-    this.loadUsersByPage(1);
+    this.userService.page$.subscribe((pageIndex: number) => {
+
+      const adjustedIndex = pageIndex + 1;
+      this.loadUsersByPage(adjustedIndex);
+    });
+
+    this.loadUsersByPage(0);
   }
 
   loadUsersByPage(pageIndex: number): void {

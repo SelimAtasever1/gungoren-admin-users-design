@@ -9,21 +9,23 @@ import { UsersService } from '@shared/users/services/users/users.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PaginationComponent implements OnInit {
-	users: UsersModel[] = [];
-	length: number;
-	index = 0;
-	pageSize = 7;
+  users: UsersModel[] = [];
+  length: number;
+  index = 0;
+  pageSize = 7;
 
-	constructor(private userService: UsersService) {}
-	
-	ngOnInit(): void {
-		this.length = Math.ceil(this.userService.GetTotalUsers() / this.pageSize);
-		this.goToPage(this.index + 1); // Increment index by 1 to match 1-based indexing
-	}
+  constructor(
+    private userService: UsersService,
+  ) {}
 
-	goToPage(index: number): void {
-		this.index = index - 1; // Decrement index by 1 to match 0-based indexing
-		this.users = this.userService.GetUsersByPage(index, this.pageSize);
-		console.info('New page:', index);
-	}
+  ngOnInit(): void {
+    this.length = Math.ceil(this.userService.GetTotalUsers() / this.pageSize);
+    this.goToPage(this.index); // Increment index by 1 to match 1-based indexing
+  }
+
+  goToPage(index: number): void {
+    this.index = index;
+    console.info('New page:', index);
+    this.userService.emitPage(index);
+  }
 }

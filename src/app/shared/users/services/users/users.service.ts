@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
 import { UsersModel } from '@shared/users/models/users.model';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class UsersService {
+	private pageSubject = new Subject<number>();
+	page$ = this.pageSubject.asObservable();
+
 	constructor() { }
 
 	private staff : UsersModel[] = [
@@ -79,5 +83,9 @@ export class UsersService {
 
 	GetTotalUsers(): number {
 		return this.staff.length;
+	}
+
+	emitPage(index: number): void {
+		this.pageSubject.next(index);
 	}
 }

@@ -53,14 +53,19 @@
               "node_modules/@taiga-ui/core/styles/taiga-ui-theme.less",
               "node_modules/@taiga-ui/core/styles/taiga-ui-fonts.less",
               "node_modules/@taiga-ui/styles/taiga-ui-global.less",
-              "src/assets/style/styles.scss"
+              "src/assets/style/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
                 "src/assets/style"
               ]
             },
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/jquery/dist/jquery.min.js"
+
+            ]
           },
           "configurations": {
             "production": {

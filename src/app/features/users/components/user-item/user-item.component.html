@@ -1,1 +1,57 @@
-<p>user-item works!</p>
+<div class="container">
+  <div class="row">
+    <div class="box">
+
+      <div class="col-sm-12 col-sm-3">
+        <div style="display: flex; justify-content: start; align-items: center;">
+          <tui-badged-content
+            colorTop="var(--tui-{{badgeStatus}}-fill)"
+            size="l"
+            class="tui-space_right-5"
+            [rounded]="true">
+            <tui-avatar
+              [text]="firstLettersOfFullname"
+              size="l"
+              [rounded]="true"> 
+            </tui-avatar>
+          </tui-badged-content>
+
+          <p>{{ user.fullname }}</p>
+        </div>
+      </div>
+
+      <div class="col-xs-2 hide-on-mobile"><p>{{ user.phone }}</p></div>
+      <div class="col-xs-2 hide-on-mobile"><p>{{ user.email }}</p></div>
+
+      <div class="col-xs-3 hide-on-mobile">
+        <div class="avatar-parent">
+          <div class="tui-avatar-stack reversed">
+            <tui-avatar class="avatar-badge"
+                  *ngFor="let avatarUrl of user.badges.slice(0, 5)"
+                  size="l"
+                  [avatarUrl]="avatarUrl"
+                  [rounded]="true"
+                  [autoColor]="true"
+                  (click)="onAvatarClick(avatarUrl)"
+            ></tui-avatar>
+            <div class="count-badge" *ngIf="user.badges.length > 5">
+              +{{ user.badges.length - 5 }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-2 hide-on-mobile">
+        <div style="display: flex; justify-content: end;">
+          <tui-badge
+          [value]="user.status"
+          size="l"
+          [class]="'badge-style ' + badgeStatus"
+          [hoverable]="true"
+        ></tui-badge></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<hr class="separating-line">

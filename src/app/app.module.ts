@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { API_URL } from '@rilke/common/api';
 import { environment } from '@env';
+import { UsersService } from "@shared/users/services/users/users.service";
 
 registerLocaleData(locale);
 
@@ -28,7 +29,8 @@ registerLocaleData(locale);
         TuiDialogModule,
         TuiAlertModule
     ],
-	providers: [
+	providers: [	
+		UsersService,
 		{ provide: LocationStrategy, useClass: PathLocationStrategy },
 		{ provide: LOCALE_ID, useValue: 'tr' },
 		{ provide: API_URL, useValue: environment.apiUrl },

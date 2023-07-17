@@ -4,6 +4,9 @@ import { SharedLayer } from '@shared/shared.layer';
 import { UsersPage } from './pages/users/users.page';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserItemComponent } from './components/user-item/user-item.component';
+import { NavigationSectionComponent } from './components/navigation-section/navigation-section.component';
+import { HeaderComponent } from './components/header/header.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
 	imports: [
@@ -13,7 +16,10 @@ import { UserItemComponent } from './components/user-item/user-item.component';
 	declarations: [
 		UsersPage,
 		UserListComponent,
-		UserItemComponent
+		UserItemComponent,
+		NavigationSectionComponent,
+		HeaderComponent,
+		PaginationComponent
 	]
 })
 export class UsersFeature {}

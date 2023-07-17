@@ -1,51 +1,38 @@
 @import 'variables';
 
 :host {
-	// Customize these variables as per your project's requirements
-$header-bg-color: #f5f5f5;
-$header-text-color: #333;
-$header-input-bg-color: #fff;
-$header-username-color: #777;
-
-.header {
-  background-color: $header-bg-color;
-  padding: 10px;
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .row {
+	
+  .header {
+    background-color: #f7eedf95;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    height: 9rem; 
+    display: flex;
     align-items: center;
   }
+
+  .success {
+    position: relative;
+    color: var(--tui-success-fill);
+  }
+
+
+  .field-small {
+    min-height: 3.5rem;
+    width: 40rem;
+  }
   
-  .header-title {
-    color: $header-text-color;
+  .header h2 {
     margin: 0;
-    font-size: 24px;
   }
   
-  .header-input {
-    background-color: $header-input-bg-color;
+  .header input {
     width: 100%;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    color: $header-text-color;
-    
-    ::placeholder {
-      color: $header-text-color;
-      opacity: 0.5;
-    }
   }
   
-  .header-username {
-    color: $header-username-color;
-    text-align: right;
-    font-size: 16px;
+  .header span {
+    float: right;
   }
+  
 }
 
-}

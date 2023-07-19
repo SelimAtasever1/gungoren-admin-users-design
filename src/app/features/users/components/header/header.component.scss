@@ -8,9 +8,16 @@
     margin-bottom: 2rem;
     height: 9rem; 
     display: flex;
+    justify-content: center;
     align-items: center;
   }
 
+  @media (max-width: 767.98px) {
+    .hide-on-small {
+      display: none;
+    }
+  }
+  
   .success {
     position: relative;
     color: var(--tui-success-fill);

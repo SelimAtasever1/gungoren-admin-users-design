@@ -29,6 +29,12 @@
         }
       }
     }
+
+    .small-positioning{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   
     .avatar-parent {
       display: flex;

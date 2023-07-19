@@ -3,27 +3,40 @@
     <div class="box">
 
       <div class="col-sm-12 col-sm-3">
-        <div style="display: flex; justify-content: start; align-items: center;">
+        <div style="display: flex; align-items: center;">
           <tui-badged-content
             colorTop="var(--tui-{{badgeStatus}}-fill)"
             size="l"
             class="tui-space_right-5"
-            [rounded]="true">
+            [rounded]="true"
+            style="flex: none;"
+          >
             <tui-avatar
               [text]="firstLettersOfFullname"
               size="l"
-              [rounded]="true"> 
-            </tui-avatar>
+              [rounded]="true"
+            ></tui-avatar>
           </tui-badged-content>
-
-          <p>{{ user.fullname }}</p>
+      
+          <div style="display: flex; flex-direction: column; margin-left: 10px;">
+            <small style="margin-bottom: 5px;">Phone</small>
+            <p style="margin: 0;">{{ user.fullname }}</p>
+          </div>
         </div>
       </div>
 
-      <div class="col-xs-2 hide-on-mobile"><p>{{ user.phone }}</p></div>
-      <div class="col-xs-2 hide-on-mobile"><p>{{ user.email }}</p></div>
+      <div class="col-xs-2 hide-on-mobile">
+        <small>Phone</small>
+        <p>{{ user.phone }}</p>
+      </div>
+      <div class="col-xs-2 hide-on-mobile">
+        <small>Mail</small>  
+        <p>{{ user.email }}</p>
+      </div>
 
       <div class="col-xs-3 hide-on-mobile">
+        <div class="small-positioning">
+          <small style="margin-bottom: 1rem;">Badges</small>
         <div class="avatar-parent">
           <div class="tui-avatar-stack reversed">
             <tui-avatar class="avatar-badge"
@@ -39,10 +52,14 @@
             </div>
           </div>
         </div>
+        </div>
       </div>
 
       <div class="col-xs-2 hide-on-mobile">
-        <div style="display: flex; justify-content: end;">
+
+        <div class="small-positioning">
+          <small style="margin-bottom: 1.2rem;">Status</small>
+
           <tui-badge
           [value]="user.status"
           size="l"

@@ -1,5 +1,55 @@
-@import 'variables';
-
 :host {
+  .container-fluid {
+    height: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .row {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navigation-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navigation-menu li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Align content to left/start */
+    margin-bottom: 1rem;
+    border-radius: 2rem;
+    padding: 1.2rem 4rem;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .navigation-menu li img {
+    width: 1.5rem;
+    margin-right: 1rem;
+    filter: invert(0%);
+  }
+
+  .navigation-menu li:hover {
+    background-color: black;
+    color: white;
+  }
+
+  .navigation-menu li:hover img {
+    filter: invert(100%);
+    transition: filter 0.3s;
+  }
 }

@@ -27,6 +27,7 @@
 		"@angular/platform-server": "16.0.2",
 		"@angular/router": "16.0.2",
 		"@angular/service-worker": "16.0.2",
+		"@fortawesome/fontawesome-free": "^6.4.0",
 		"@nguniversal/express-engine": "~16.0.2",
 		"@rilke/common": "~16.0.0",
 		"@taiga-ui/cdk": "^3.35.0",

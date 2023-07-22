@@ -13,7 +13,6 @@ export class UserItemComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.firstLettersOfFullname = this.getInitials(this.user.fullname);
-		console.log(this.user.badges)
 		this.setBadgeStatus();
 	}
 

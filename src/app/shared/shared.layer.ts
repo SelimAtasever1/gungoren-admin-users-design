@@ -4,9 +4,12 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TuiAvatarModule, TuiBadgeModule, TuiBadgedContentModule, TuiInputModule, TuiPaginationModule, TuiTextAreaModule } from '@taiga-ui/kit';
 import { TuiHintModule, TuiRootModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
+import { FilterPipe } from './pipes/filter/filter.pipe';
 
 @NgModule({
-	declarations: [],
+	declarations: [
+		FilterPipe
+	],
 	imports: [
 		CommonModule,
 		RouterModule,
@@ -20,7 +23,8 @@ import { TuiHintModule, TuiRootModule, TuiTextfieldControllerModule } from '@tai
 		TuiTextfieldControllerModule,
 		TuiTextAreaModule,
 		TuiInputModule,
-		TuiHintModule
+		TuiHintModule,
+		TuiTextfieldControllerModule
 	],
 	exports: [
 		CommonModule,
@@ -34,7 +38,9 @@ import { TuiHintModule, TuiRootModule, TuiTextfieldControllerModule } from '@tai
 		TuiPaginationModule,
 		TuiTextAreaModule,
 		TuiInputModule,
-		TuiHintModule
+		TuiHintModule,
+		FilterPipe,
+		TuiTextfieldControllerModule
 	],
 })
 export class SharedLayer {}

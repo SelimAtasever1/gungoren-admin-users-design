@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UsersModel } from '@shared/users/models/users.model';
 import { UsersService } from '@shared/users/services/users/users.service';
 
@@ -9,6 +9,7 @@ import { UsersService } from '@shared/users/services/users/users.service';
 })
 export class UserListComponent implements OnInit {
   users: UsersModel[];
+  @Input() filteredString : string = "";
 
   constructor(private userService: UsersService) {}
 

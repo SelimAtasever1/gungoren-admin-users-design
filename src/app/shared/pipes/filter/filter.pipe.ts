@@ -1,23 +1,26 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { UsersModel } from '@shared/users/models/users.model';
 
 @Pipe({
-	name: 'filter'
+  name: 'filter'
 })
 export class FilterPipe implements PipeTransform {
+  transform(value: UsersModel[], filteredString: string): UsersModel[] {
+    if (!value || !filteredString) {
+      return value;
+    }
 
-	transform(value: any, filteredString : string) {
+    const filteredUsers = value.filter(user => {
+      if (user.fullname && user.fullname.toLowerCase().includes(filteredString.toLowerCase())) {
+        return true;
+      }
+      return false;
+    });
 
-		if (!value || !filteredString) {
-		  return value;
-		}
-	
-		const filteredRecipes = value.filter(item => item.name.toLowerCase().includes(filteredString.toLowerCase()));
-	
-		if (filteredRecipes.length === 0) {
-		  return [];
-		}
-	
-		return filteredRecipes; 
-	  }
+    if (filteredUsers.length === 0) {
+      return [];
+    }
 
+    return filteredUsers;
+  }
 }

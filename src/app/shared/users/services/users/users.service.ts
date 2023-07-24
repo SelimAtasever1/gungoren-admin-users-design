@@ -7,7 +7,16 @@ export class UsersService {
 	private pageSubject = new Subject<number>();
 	page$ = this.pageSubject.asObservable();
 
+	private searchSubject = new Subject<string>();
+	searchTextChanged$ = this.searchSubject.asObservable();
+
+
 	constructor() { }
+
+	sendSearchText(text: string) {
+		this.searchSubject.next(text);
+	}
+
 
 	private staff : UsersModel[] = [
 		new UsersModel("joe doe", "24199214", "joedoe@mail.com", 
@@ -68,6 +77,11 @@ export class UsersService {
 		new UsersModel("jeff IV doe", "24199214", "marydoe@mail.com", ["https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.png"], "active"),
 		new UsersModel("jeff V doe", "24199214", "marydoe@mail.com", ["https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.png"], "active"),
 
+		new UsersModel("jeff I doe", "24199214", "marydoe@mail.com", ["https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.png"], "active"),
+		new UsersModel("jeff II doe", "24199214", "marydoe@mail.com", ["https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.png"], "active"),
+		new UsersModel("jeff III doe", "24199214", "marydoe@mail.com", ["https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.png"], "active"),
+		new UsersModel("jeff IV doe", "24199214", "marydoe@mail.com", ["https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.png"], "active"),
+		new UsersModel("jeff V doe", "24199214", "marydoe@mail.com", ["https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.png"], "active"),
 
 	];
 

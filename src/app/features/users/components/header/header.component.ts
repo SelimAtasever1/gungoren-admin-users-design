@@ -1,5 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UsersService } from '@shared/users/services/users/users.service';
+import { Subject } from 'rxjs';
 
 @Component({
 	selector: 'header',
@@ -9,8 +11,18 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class HeaderComponent {
     
+	@Output() inputSearchText : string;
+	private searchSubject = new Subject<string>();
+
+	constructor(private userservice : UsersService){}
+
     testForm = new FormGroup({
         testValue1: new FormControl('A field', Validators.required),
     });
+
+	onInputChange(event: Event) {
+		const value = (event.target as HTMLInputElement).value;
+		this.userservice.sendSearchText(value);
+	}
 	
 }

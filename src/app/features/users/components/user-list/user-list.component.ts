@@ -9,22 +9,34 @@ import { UsersService } from '@shared/users/services/users/users.service';
 })
 export class UserListComponent implements OnInit {
   users: UsersModel[];
-  @Input() filteredString : string = "";
+  filteredString: string = "";
+  adjustedIndex : number;
 
   constructor(private userService: UsersService) {}
 
   ngOnInit(): void {
     this.userService.page$.subscribe((pageIndex: number) => {
-
-      const adjustedIndex = pageIndex + 1;
-      this.loadUsersByPage(adjustedIndex);
+      this.adjustedIndex = pageIndex + 1;
+      this.loadUsersByPage(this.adjustedIndex);
     });
 
-    this.loadUsersByPage(0);
+    this.userService.searchTextChanged$.subscribe((searchText: string) => {
+      this.filteredString = searchText;
+      console.log("header input search result: " + this.filteredString);
+
+      this.loadAllUsers(); 
+      if(this.filteredString === ""){
+        this.loadUsersByPage(this.adjustedIndex);
+      }
+    });
   }
 
   loadUsersByPage(pageIndex: number): void {
     const pageSize = 7;
     this.users = this.userService.GetUsersByPage(pageIndex, pageSize);
+  }
+
+  loadAllUsers(): void {
+    this.users = this.userService.GetUsers();
   }
 }

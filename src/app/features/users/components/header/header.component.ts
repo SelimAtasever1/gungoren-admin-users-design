@@ -17,7 +17,7 @@ export class HeaderComponent {
 	constructor(private userservice : UsersService){}
 
     testForm = new FormGroup({
-        testValue1: new FormControl('A field', Validators.required),
+        testValue1: new FormControl(''),
     });
 
 	onInputChange(event: Event) {

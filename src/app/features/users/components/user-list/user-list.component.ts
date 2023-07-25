@@ -22,7 +22,6 @@ export class UserListComponent implements OnInit {
 
     this.userService.searchTextChanged$.subscribe((searchText: string) => {
       this.filteredString = searchText;
-      console.log("header input search result: " + this.filteredString);
 
       this.loadAllUsers(); 
       if(this.filteredString === ""){

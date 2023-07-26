@@ -4,18 +4,23 @@
       <div class="col-md-4 hide-on-small">
         <h2>Dashboard</h2>
       </div>
-      <div class="col-md-4 col-xs-9" [formGroup]="testForm"> 
+      <div class="col-md-4 col-xs-12" [formGroup]="testForm"> 
 
-        <tui-input formControlName="testValue1">
+        <input formControlName="testValue1" 
+        type="text"
+        (input)="onInputChange($event)"          
+        >
+
+        <!-- <tui-input formControlName="testValue1">
           Search a user
           <input
             tuiTextfield
             tuiTextfieldSize="l"
             (input)="onInputChange($event)"          
           />
-        </tui-input>
+        </tui-input> -->
       </div>
-      <div class="col-md-4 col-xs-3">
+      <div class="col-md-4 hide-on-small">
         <span>Username</span>
       </div>
     </div>

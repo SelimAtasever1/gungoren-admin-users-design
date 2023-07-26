@@ -4,21 +4,16 @@
       <div class="col-md-4 hide-on-small">
         <h2>Dashboard</h2>
       </div>
-      <div class="col-md-4 col-xs-12" [formGroup]="testForm"> 
+      <div class="search-input col-md-4 col-xs-12" [formGroup]="testForm"> 
 
-        <input formControlName="testValue1" 
-        type="text"
-        (input)="onInputChange($event)"          
-        >
-
-        <!-- <tui-input formControlName="testValue1">
+        <tui-input formControlName="testValue1">
           Search a user
           <input
             tuiTextfield
             tuiTextfieldSize="l"
             (input)="onInputChange($event)"          
           />
-        </tui-input> -->
+        </tui-input>
       </div>
       <div class="col-md-4 hide-on-small">
         <span>Username</span>

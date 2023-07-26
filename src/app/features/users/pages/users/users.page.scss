@@ -9,9 +9,10 @@
         display: none;
       }
 
-      .my-header {
+      .my-header, .my-user-list {
         width: 100%;
       }
+
     }
 
     .row {
@@ -45,7 +46,9 @@
         width: 100%;
       }
 
-      
+      .my-header{
+        margin-top: 5rem;
+      }
 
       .my-header,
       .my-user-list,
@@ -53,7 +56,6 @@
         width: 100%;
         max-width: 100%;
         flex: 1;
-        margin-top: 4rem;
         margin-bottom: 4rem;
       }
     }

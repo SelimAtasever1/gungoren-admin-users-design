@@ -12,6 +12,7 @@
       text-align: center;
       display: flex;
       align-items: center;
+      justify-content: space-between;
   
       p {
         font-size: 15px;
@@ -20,6 +21,16 @@
       }
 
        @media (max-width: 767px) {
+        .box {
+          flex-basis: 100%; 
+        }
+
+        .phone, .mail{
+          display: none;
+        }
+      }
+
+      @media (max-width: 555px) {
         .box {
           flex-basis: 100%; 
         }

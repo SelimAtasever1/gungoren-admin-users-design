@@ -10,7 +10,7 @@ import { Subject } from 'rxjs';
 	styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-    
+    avatarUrl = "https://cdn.britannica.com/44/127844-050-33AB565F/Barack-Obama-2009.jpg";
 	@Output() inputSearchText : string;
 	private searchSubject = new Subject<string>();
 

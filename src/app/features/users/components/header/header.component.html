@@ -1,23 +1,51 @@
 <div class="header">
   <div class="container">
     <div class="row">
-      <div class="col-md-4 hide-on-small">
+
+      <div class="dashboard col-md-4 hide-on-small">
         <h2>Dashboard</h2>
       </div>
-      <div class="search-input col-md-4 col-xs-12" [formGroup]="testForm"> 
 
-        <tui-input formControlName="testValue1">
+      <div class="search-input col-md-4 col-xs-12" 
+      [formGroup]="testForm"
+      > 
+
+        <tui-input formControlName="testValue1"
+        tuiTextfieldIcon="tuiIconSearchLarge"
+        >
           Search a user
           <input
             tuiTextfield
-            tuiTextfieldSize="l"
+            tuiTextfieldSize="s"
             (input)="onInputChange($event)"          
           />
         </tui-input>
       </div>
-      <div class="col-md-4 hide-on-small">
-        <span>Username</span>
+
+      <div class="col-md-4 hide-on-small" style="float: right">
+        <div class="admin-info">
+
+          <div style="display: flex; flex-direction: column; margin-right: 2rem; ">
+            <p style="margin: 0;">Test User</p>
+            <small style="margin-bottom: 5px;">User</small>
+          </div>
+
+          <tui-badged-content
+            size="l"
+            class="tui-space_right-5"
+            [rounded]="true"
+            style="flex: none;"
+          >
+            <tui-avatar
+              size="l"
+              [avatarUrl]="avatarUrl"
+              [rounded]="true"
+            ></tui-avatar>
+          </tui-badged-content>
+      
+        </div>
       </div>
+
     </div>
   </div>
 </div>

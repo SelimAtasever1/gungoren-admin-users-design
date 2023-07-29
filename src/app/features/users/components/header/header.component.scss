@@ -33,7 +33,7 @@
         display: flex;
       }
 
-      .dashboard{
+      h2{
         display: none;
       }
 
@@ -48,6 +48,8 @@
 
     h2{
       margin: 0;
+      font-weight: bold;
+      font-family: 'Rubik', sans-serif;
     }
 
     .admin-info{

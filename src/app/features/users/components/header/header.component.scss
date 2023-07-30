@@ -2,10 +2,7 @@
 
 @mixin mobile-style($max-width, $input-width) {
   @media (max-width: $max-width) {
-    .hide-on-small {
-      display: none;
-    }
-
+    
     .search-input{
       width: $input-width;
     }

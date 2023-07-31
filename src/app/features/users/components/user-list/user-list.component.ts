@@ -1,16 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { UsersModel } from '@shared/users/models/users.model';
 import { UsersService } from '@shared/users/services/users/users.service';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss']
 })
-export class UserListComponent implements OnInit {
-  users: UsersModel[];
+export class UserListComponent {
+  users$: Observable<UsersModel[]>; 
   filteredString: string = "";
-  adjustedIndex : number;
+  adjustedIndex: number;
 
   constructor(private userService: UsersService) {}
 
@@ -23,8 +24,8 @@ export class UserListComponent implements OnInit {
     this.userService.searchTextChanged$.subscribe((searchText: string) => {
       this.filteredString = searchText;
 
-      this.loadAllUsers(); 
-      if(this.filteredString === ""){
+      this.loadAllUsers();
+      if (this.filteredString === "") {
         this.loadUsersByPage(this.adjustedIndex);
       }
     });
@@ -32,10 +33,10 @@ export class UserListComponent implements OnInit {
 
   loadUsersByPage(pageIndex: number): void {
     const pageSize = 7;
-    this.users = this.userService.GetUsersByPage(pageIndex, pageSize);
+    this.users$ = of(this.userService.GetUsersByPage(pageIndex, pageSize)); // Convert to Observable
   }
 
   loadAllUsers(): void {
-    this.users = this.userService.GetUsers();
+    this.users$ = of(this.userService.GetUsers()); // Convert to Observable
   }
 }

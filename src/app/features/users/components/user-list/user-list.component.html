@@ -21,17 +21,20 @@
                 <ng-container *ngIf="((users$ | async) | filter: filteredString) as filteredItems">
                     <div *ngIf="filteredItems.length > 0"></div>
                     
-                    <tui-block-status>
-                        <img style="width: 35rem; height: 35rem;"
-                            tuiSlot="top"
+
+                    <tui-block-status *ngIf="filteredItems.length === 0">
+                        <div tuiSlot="top" class="image-container">
+                          <img
                             alt="not found"
                             src="./assets/media/content-not-found.webp"
                             class="image"
-                        />
-
-                        <p style="font-size: 3rem; margin-top: 5rem;"
-                         *ngIf="filteredItems.length === 0">No results found for "{{ filteredString }}"</p>
-                    </tui-block-status>
+                          />
+                        </div>
+                      
+                        <div class="text-container">
+                          <p>No results found for "{{ filteredString }}"</p>
+                        </div>
+                      </tui-block-status>                      
 
                 </ng-container>
 

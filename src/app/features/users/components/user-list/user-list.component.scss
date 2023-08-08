@@ -1,5 +1,29 @@
 @import 'variables';
 
 :host {
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      
+        .image {
+          max-width: 100%;
+          height: auto;
+          width: auto;
+          max-height: 70vh;
+        }
+      }
+      
+      .text-container {
+        text-align: center;
+        margin-top: 1rem;
+      
+        p {
+          font-size: 2.5rem;
+          margin-top: 2rem;
+        }
+      }
+      
     
 }

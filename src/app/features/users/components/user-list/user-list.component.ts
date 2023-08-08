@@ -33,10 +33,10 @@ export class UserListComponent {
 
   loadUsersByPage(pageIndex: number): void {
     const pageSize = 7;
-    this.users$ = of(this.userService.GetUsersByPage(pageIndex, pageSize)); // Convert to Observable
+    this.users$ = of(this.userService.GetUsersByPage(pageIndex, pageSize)); 
   }
 
   loadAllUsers(): void {
-    this.users$ = of(this.userService.GetUsers()); // Convert to Observable
+    this.users$ = of(this.userService.GetUsers()); 
   }
 }

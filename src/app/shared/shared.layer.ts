@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TuiAvatarModule, TuiBadgeModule, TuiBadgedContentModule, TuiInputModule, TuiPaginationModule, TuiTextAreaModule } from '@taiga-ui/kit';
 import { TuiHintModule, TuiRootModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
 import { FilterPipe } from './pipes/filter/filter.pipe';
+import { TuiBlockStatusModule } from '@taiga-ui/layout';
 
 @NgModule({
 	declarations: [
@@ -24,7 +25,8 @@ import { FilterPipe } from './pipes/filter/filter.pipe';
 		TuiTextAreaModule,
 		TuiInputModule,
 		TuiHintModule,
-		TuiTextfieldControllerModule
+		TuiTextfieldControllerModule,
+		TuiBlockStatusModule
 	],
 	exports: [
 		CommonModule,
@@ -40,7 +42,8 @@ import { FilterPipe } from './pipes/filter/filter.pipe';
 		TuiInputModule,
 		TuiHintModule,
 		FilterPipe,
-		TuiTextfieldControllerModule
+		TuiTextfieldControllerModule,
+		TuiBlockStatusModule
 	],
 })
 export class SharedLayer {}
